@@ -83,3 +83,22 @@ do
 done
 echo "Total hour : " $Total_Hr
 echo "Total employee wage per hour and month :" $Total_Salary
+
+#UC7
+
+function GetEmp_Hr()
+{
+	local emphr=$1
+	empwage=$(( $emphr * $Wage_Per_Hr ))
+	
+}
+while [ $Total_Hr -lt $Total_Working_Hr -a $Total_Day -lt $numofWorkingDays ]
+do
+        (( Total_Day++ ))
+        Total_Hr=$(( $Total_Hr + $Emp_Hr ))
+        echo "Total hour : " $Total_Hr
+        salary=GetEmp_Hr $Emp_Hr
+        Total_Salary=$(( $Total_Salary + $salary ))
+
+done
+echo "Total employe wage per month using function : " $Total_Salary
